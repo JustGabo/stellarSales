@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Raleway } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 
-const inter = Raleway({ subsets: ['latin'] })
+const inter = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'StellarSales',

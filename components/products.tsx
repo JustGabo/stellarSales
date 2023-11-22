@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/product-card";
 import { Product } from "@/types/index";
+import Filter from '@/components/filter-select'
 
 function Products() {
   // uses and states
@@ -9,18 +10,26 @@ function Products() {
 
   // functions
   const callApi = async () => {
-    const response = await fetch("https://dummyjson.com/products");
-    const {products} = await response.json();
-    setProducts(products)
+    const response = await fetch("https://fakestoreapi.com/products");
+    const res = await response.json();
+    setProducts(res)
+    console.log(res)
   };
 
   // useeffects
 
   useEffect(() => {
     callApi();
-  });
+  },[]);
   return (
-    <div>
+    <div className="p-20 grid gap-20">
+      <div className="flex justify-between items-center">
+      <h1 className="text-3xl font-semibold">Products</h1>
+      <div className="w-[20%]">
+      <Filter/>
+      </div>
+      </div>
+
       <ProductCard products={products} />
     </div>
   );
