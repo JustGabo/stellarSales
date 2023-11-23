@@ -4,7 +4,7 @@ function Hero() {
   return (
     <main className="flex flex-col gap-3">
       <div className="flex items-center gap-2 ">
-        <div className="h-[2px] w-16 bg-cyan-900"></div>
+        <div className="h-[2px] w-16 bg-cyan-600"></div>
         <p className="text-sm  uppercase font-medium">New Trend</p>
       </div>
       <div className="uppercase w-[90%] lg:text-7xl">
