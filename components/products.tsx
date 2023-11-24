@@ -3,26 +3,18 @@ import { useEffect, useState } from "react";
 import ProductCard from "@/components/product-card";
 import { Product } from "@/types/index";
 import Filter from '@/components/filter-select'
+import {UsingProductContext} from '@/context/productContext'
 
 // importing context
 
 function Products() {
   // uses and states
-  const [products, setProducts] = useState<Product[]>([]);
-
+  const {products} = UsingProductContext();
   // functions
-  const callApi = async () => {
-    const response = await fetch("https://fakestoreapi.com/products");
-    const res = await response.json();
-    setProducts(res)
-    console.log(res)
-  };  
+
 
   // useeffects
 
-  useEffect(() => {
-    callApi();
-  },[]);
   return (
     <div className="p-10 grid gap-20">
       <div className="flex justify-between items-center">
