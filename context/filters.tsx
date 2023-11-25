@@ -16,7 +16,7 @@ const initialState = {
 }
 const FilterContext = createContext<FilterState>(initialState)
 
-export const usingFilterContext = ()=>{
+export const UsingFilterContext = ()=>{
     const context = useContext(FilterContext)
     return context
 }
@@ -29,10 +29,6 @@ export function FiltersProvider({children}: FilterProps) {
         filter,
         setFilter
     }
-
-    useEffect(()=>{
-      console.log(filter)
-    },[filter])
 
   return (
     <FilterContext.Provider  value={value}>

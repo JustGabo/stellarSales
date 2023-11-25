@@ -11,16 +11,16 @@ function CartItems() {
     const {cart, decreaseAmount, increaseAmount, addProduct} = UsingCartContext()
 
   return (
-    <div className='grid gap-5'>
+    <div className='grid gap-5 overflow-y-auto'>
       {cart.map((product: Product)=> {
         return (
-            <div key={product.id} className='border-y px-2  flex items-center gap-5'>
-                <div className='w-[20%]'>
-                    <img className='h-[150px] w-full object-contain' src={product.image} alt="" />
+            <div key={product.id} className='flex items-center gap-5 px-2 border-y'>
+                <div className='w-[20%] py-3'>
+                    <img className='h-[100px] w-full object-contain' src={product.image} alt="" />
                 </div>
                 <div className='w-[80%] flex flex-col gap-5'>
                     <div className='flex items-center justify-between'>
-                    <h3 className='text-xs line-clamp-1 uppercase' >{product.title}</h3>
+                    <h3 className='text-xs uppercase line-clamp-1' >{product.title}</h3>
                     <X width={15} height={15} className='cursor-pointer'/>
                     </div>
                     <div>

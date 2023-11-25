@@ -1,8 +1,8 @@
 
 function Footer() {
   return (
-    <div className="bg-neutral-900 py-5 text-center text-white text-sm">
-      Copyright Ecommerce Shop 2023. All rights reserved
+    <div className="py-5 text-sm text-center text-white bg-neutral-900">
+      Copyright &copy; Ecommerce Shop 2023. All rights reserved
     </div>
   )
 }

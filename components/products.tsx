@@ -15,9 +15,11 @@ function Products() {
 
   // useeffects
 
+
+
   return (
-    <div className="p-10 grid gap-20">
-      <div className="flex justify-between items-center">
+    <div className="grid gap-20 p-10">
+      <div className="flex items-center justify-between">
       <h1 className="text-3xl font-semibold">Products</h1>
       <div className="w-[20%]">
       <Filter/>

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import {Toaster} from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Montserrat({ subsets: ["latin"] });
+import Providers from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "StellarSales",
@@ -18,8 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <Toaster/>
+        <Providers>
+          {children} <Toaster />
+        </Providers>
       </body>
     </html>
   );

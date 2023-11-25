@@ -1,17 +1,26 @@
-'use client'
-import NavBar from "@/components/navBar"
-interface PageProps {
+import NavBar from "@/components/navBar";
+import ProductView from "@/components/product-view";
+import RelatedProducts from "@/components/related-products";
+
+interface Props {
   params: {
-    id: string
-  }
+    id: number;
+  };
 }
 
-function Page({params}:PageProps) {
+function page({ params }: Props) {
   return (
-    <div className="px-10">
-      <NavBar/>
+    <div className="px-10 pb-5">
+        <NavBar />
+      <div className="pt-32 mb-10">
+        <div className="flex flex-col justify-center h-full">
+          <ProductView id={params.id} />
+        </div>
+      </div>
+
+      <RelatedProducts id={params.id} />
     </div>
-  )
+  );
 }
 
-export default Page
+export default page;

@@ -1,5 +1,3 @@
-'use client'
-import React from "react";
 import NavBar from "@/components/navBar";
 import Main from "@/components/main";
 import Hero from "@/components/hero";
@@ -7,29 +5,20 @@ import Footer from "@/components/footer";
 
 
 // importing contexts
-import {ProductContextProvider} from '@/context/productContext'
-import { CartContextProvider } from "@/context/cartContext";
-import {FiltersProvider} from '@/context/filters'
 
 
 
 function page() {
   return (
-    <div className="  ">
-      <ProductContextProvider>
-      <CartContextProvider>
-      <FiltersProvider>
-      <div className="h-screen bg-blue-200 px-10 flex flex-col gap-20">
+    <div className="">
+      <div className="flex flex-col h-screen gap-20 px-10 bg-blue-200">
       <NavBar />
-      <div className="  h-full flex items-center">
+      <div className="flex items-center h-full ">
         <Hero />
       </div>
       </div>
       <Main />
       <Footer/>
-      </FiltersProvider>
-      </CartContextProvider>
-      </ProductContextProvider>
     </div>
   );
 }
