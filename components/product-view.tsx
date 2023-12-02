@@ -21,7 +21,7 @@ function ProductView({ id }: Props) {
 
   return (
     <div className="">
-      {product && (
+      {product ? (
         <section className="flex flex-col gap-8 ">
           <article className="flex items-center gap-5">
             <div className="w-[40%] flex items-center justify-center border rounded-lg px-4 py-8 shadow-md">
@@ -67,7 +67,10 @@ function ProductView({ id }: Props) {
             </article>
           </article>
         </section>
-      )}
+      ) : <section className="md:w-full  rounded-md flex gap-5 h-[400px] animate-pulse">
+        <article className="w-[40%] h-full animate-pulse rounded-md  bg-gray-200 shadow-lg"></article>
+        <article className="w-[60%] h-full animate-pulse rounded-md bg-gray-200 shadow-lg"></article>
+        </section>}
     </div>
   );
 }

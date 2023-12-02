@@ -67,7 +67,7 @@ function RelatedProductsCard({ products }: Props) {
           );
         })
       ) : (
-        <div>Hola</div>
+        <section className="bg-red-50 h-96"> hola</section>
       )}
     </div>
   );

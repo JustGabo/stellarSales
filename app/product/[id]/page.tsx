@@ -1,6 +1,7 @@
 import NavBar from "@/components/navBar";
 import ProductView from "@/components/product-view";
 import RelatedProducts from "@/components/related-products";
+import { Suspense } from "react";
 
 interface Props {
   params: {
@@ -11,12 +12,14 @@ interface Props {
 function page({ params }: Props) {
   return (
     <div className="px-10 pb-5">
-        <NavBar />
-      <div className="pt-32 mb-10">
-        <div className="flex flex-col justify-center h-full">
-          <ProductView id={params.id} />
+      <NavBar />
+      <Suspense fallback={<div>loading...</div>}>
+        <div className="pt-32 mb-10">
+          <div className="flex flex-col justify-center h-full">
+            <ProductView id={params.id} />
+          </div>
         </div>
-      </div>
+      </Suspense>
 
       <RelatedProducts id={params.id} />
     </div>
