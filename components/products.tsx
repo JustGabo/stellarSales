@@ -26,7 +26,7 @@ function Products() {
       </div>
       </div>
 
-      <ProductCard products={products} />
+      <ProductCard productsProps={products} />
     </div>
   );
 }

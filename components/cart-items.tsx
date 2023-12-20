@@ -8,10 +8,10 @@ import {Button} from '@/components/ui/button'
 function CartItems() {
 
     // context
-    const {cart, decreaseAmount, increaseAmount, addProduct} = UsingCartContext()
+    const {cart, decreaseAmount, increaseAmount} = UsingCartContext()
 
   return (
-    <div className='grid gap-5 overflow-y-auto'>
+    <div className='grid gap-5  overflow-y-auto'>
       {cart.map((product: Product)=> {
         return (
             <div key={product.id} className='flex items-center gap-5 px-2 border-y'>

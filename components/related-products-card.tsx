@@ -17,20 +17,24 @@ function RelatedProductsCard({ products }: Props) {
   const { toast } = useToast();
 
   return (
-    <div className="grid grid-cols-6 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-6 gap-5">
       {products ? (
         products.map((product) => {
           return (
-            <Card key={product.id} className="border-none h-96">
+            <Card key={product.id} className="border-none shadow-none">
               <CardContent className="flex flex-col gap-2 p-0">
-                <div className="w-[100%] border overflow-hidden rounded-md px-5 py-5 group  flex flex-col  gap-5 items-center justify-center">
+                <div className="w-full border  overflow-hidden rounded-md px-5 py-5 group  flex flex-col  gap-1 items-center justify-center">
                   {" "}
-                  <img
-                    className="h-[200px] group-hover:scale-110 transition-all duration-150 object-contain"
-                    src={product.image}
-                    alt={product.description}
-                  />
-                  <div className="relative flex items-center">
+                  <div className=" p-2 w-full h-full flex items-center justify-center">
+                    <Link href={`/product/${product.id}`}>
+                      <img
+                        className="h-[100px]  group-hover:scale-110 transition-all duration-150 object-contain"
+                        src={product.image}
+                        alt={product.description}
+                      />
+                    </Link>
+                  </div>
+                  <div className="relative flex  items-center">
                     <Button className="p-2 bg-transparent">
                       <Link href={`/product/${product.id}`}>
                         <Expand className="p-2 text-black transition-all duration-200 border rounded-full shadow-xl opacity-0 cursor-pointer h-9 w-9 group-hover:opacity-100" />
@@ -52,9 +56,11 @@ function RelatedProductsCard({ products }: Props) {
                 </div>
 
                 <div className="h-[30%] flex flex-col gap-2">
-                  <h3 className="text-sm font-semibold line-clamp-1">
-                    {product.title}
-                  </h3>
+                  <Link href={`/product/${product.id}`}>
+                    <h3 className="text-sm font-semibold line-clamp-1">
+                      {product.title}
+                    </h3>
+                  </Link>
                   <span className="text-xs font-semibold text-gray-500">
                     {product.category}
                   </span>

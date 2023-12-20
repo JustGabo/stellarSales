@@ -1,19 +1,22 @@
-'use client'
+"use client";
 import { FiltersProvider } from "@/context/filters";
 import { CartContextProvider } from "@/context/cartContext";
 import { ProductContextProvider } from "@/context/productContext";
+import { StepsContextProvider } from "@/context/stepsContext";
 
-interface Props{
-    children: React.ReactNode
+interface Props {
+  children: React.ReactNode;
 }
 
-function Providers({children}: Props) {
+function Providers({ children }: Props) {
   return (
     <div>
       <ProductContextProvider>
         <CartContextProvider>
           <FiltersProvider>
-            {children}
+            <StepsContextProvider> 
+              {children}
+            </StepsContextProvider>
           </FiltersProvider>
         </CartContextProvider>
       </ProductContextProvider>

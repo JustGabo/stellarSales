@@ -23,32 +23,32 @@ function ProductView({ id }: Props) {
     <div className="">
       {product ? (
         <section className="flex flex-col gap-8 ">
-          <article className="flex items-center gap-5">
-            <div className="w-[40%] flex items-center justify-center border rounded-lg px-4 py-8 shadow-md">
+          <article className="flex md:flex-row flex-col items-center gap-5">
+            <div className="md:w-[40%] w-full flex items-center justify-center border rounded-lg px-4 py-8 shadow-md">
               <img
                 className="h-[300px] object-contain"
                 src={product.image}
                 alt=""
               />
             </div>
-            <article className="w-[60%] flex h-[350px]  flex-col gap-5 ">
+            <article className="md:w-[60%] w-full flex h-[350px]  flex-col gap-5 ">
               <div className="flex flex-col gap-1 py-1 border-b shadow-sm ">
                 <h3 className="text-2xl font-semibold">{product.title}</h3>
                 <p className="font-semibold">${product.price}</p>
               </div>
               <p className="text-xs font-semibold">
                 Category:{" "}
-                <span className="font-medium">{product.category}</span>
+                <span className="font-medium text-gray-500">{product.category}</span>
               </p>
               <p className="text-xs font-semibold">
                 Description:{" "}
-                <span className="text-xs font-medium capitalize">
+                <span className="text-xs text-gray-500 font-medium capitalize">
                   {product.description}
                 </span>
               </p>
               <p className="text-xs font-semibold">
                 Rating:{" "}
-                <span className="text-xs font-medium capitalize">
+                <span className="text-xs font-medium text-gray-500 capitalize">
                   {product.rating.rate}
                 </span>
               </p>
@@ -68,8 +68,8 @@ function ProductView({ id }: Props) {
           </article>
         </section>
       ) : <section className="md:w-full  rounded-md flex gap-5 h-[400px] animate-pulse">
-        <article className="w-[40%] h-full animate-pulse rounded-md  bg-gray-200 shadow-lg"></article>
-        <article className="w-[60%] h-full animate-pulse rounded-md bg-gray-200 shadow-lg"></article>
+        <article className="md:w-[40%] w-full h-full animate-pulse rounded-md  bg-gray-200 shadow-lg"></article>
+        <article className="md:w-[60%] w-full h-full animate-pulse rounded-md bg-gray-200 shadow-lg"></article>
         </section>}
     </div>
   );

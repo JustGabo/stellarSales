@@ -16,7 +16,7 @@ import { UsingCartContext } from "@/context/cartContext";
 import { Button } from "./ui/button";
 
 function NavBar() {
-  const { cart, total } = UsingCartContext();
+  const { cart, total, clearCart } = UsingCartContext();
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -55,17 +55,17 @@ function NavBar() {
                 </span>
               )}
             </SheetTrigger>
-            <SheetContent className="flex flex-col gap-5 px-2 py-10 ">
-              <SheetHeader className="lg:max-h-[550px] lg:min-h-[550px]">
+            <SheetContent className="flex flex-col gap-5 px-2 py-10 h-screen">
+              <SheetHeader className="lg:max-h-[550px] h-[90%] lg:min-h-[80%]">
                 <h3 className="text-sm font-semibold">{`Cart (${cart.length})`}</h3>
                 <CartItems />
               </SheetHeader>
-              <SheetFooter className="gap-2 py-3 ">
+              <SheetFooter className="gap-2 py-3 md:relative absolute bottom-0  w-full px-2 left-0 right-0">
                 <section className="flex flex-col w-full gap-5">
                 <article className="flex items-center justify-between w-full">
                   <h4 className="text-sm font-semibold">Total: {" "} <span>${Math.ceil(total).toFixed(2)}</span></h4>
 
-                  <Button variant={"destructive"} className="flex gap-2 w-14">
+                  <Button onClick={()=> clearCart()} variant={"destructive"} className="flex gap-2 w-14">
                     <Trash2 className="w-4 aspect-square" strokeWidth={2} />
                   </Button>
                 </article>
