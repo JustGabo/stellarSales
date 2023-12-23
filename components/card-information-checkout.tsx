@@ -101,7 +101,8 @@ const CardInformation = () => {
             <label htmlFor="cardnumber">Cardnumber</label>
           )}
           <Input
-            onChange={(e) => setCard(e.target.value)}
+          required
+          onChange={(e) => setCard(e.target.value)}
             name="card"
             className="text-xs text-gray-500 placeholder:text-gray-300"
             id="cardnumber"
@@ -118,6 +119,7 @@ const CardInformation = () => {
               <label htmlFor="date">Expiry Date</label>
             )}
             <Input
+            required
               onChange={(e) => setDate(e.target.value)}
               name="expdate"
               id="date"
@@ -136,6 +138,7 @@ const CardInformation = () => {
               <label htmlFor="cvv">CVV</label>
             )}
             <Input
+            required
               onChange={(e) => setCvv(e.target.value)}
               name="cvv"
               id="cvv"
@@ -153,6 +156,9 @@ const CardInformation = () => {
             <label htmlFor="name">Cardholder name</label>
           )}
           <Input
+          required
+          minLength={1}
+          maxLength={2}
             name="name"
             onChange={(e) => setName(e.target.value)}
             className="text-xs  text-gray-500 placeholder:text-gray-300"

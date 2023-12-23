@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Product } from "@/types/index";
 import { Expand, Plus } from "lucide-react";
+import Image from 'next/image'
 
 // importin context
 import { UsingCartContext } from "@/context/cartContext";
@@ -27,8 +28,9 @@ function RelatedProductsCard({ products }: Props) {
                   {" "}
                   <div className=" p-2 w-full h-full flex items-center justify-center">
                     <Link href={`/product/${product.id}`}>
-                      <img
-                        className="h-[100px]  group-hover:scale-110 transition-all duration-150 object-contain"
+                      <Image
+                      width={100}
+                      height={100}                        className="h-[100px]  group-hover:scale-110 transition-all duration-150 object-contain"
                         src={product.image}
                         alt={product.description}
                       />
@@ -37,7 +39,7 @@ function RelatedProductsCard({ products }: Props) {
                   <div className="relative flex  items-center">
                     <Button className="p-2 bg-transparent">
                       <Link href={`/product/${product.id}`}>
-                        <Expand className="p-2 text-black transition-all duration-200 border rounded-full shadow-xl opacity-0 cursor-pointer h-9 w-9 group-hover:opacity-100" />
+                        <Expand className="p-2 text-black transition-all duration-200 border rounded-full shadow-xl opacity-100 md:opacity-0 cursor-pointer h-9 w-9 group-hover:opacity-100" />
                       </Link>
                     </Button>
                     <Button
@@ -50,7 +52,7 @@ function RelatedProductsCard({ products }: Props) {
                       }}
                       className="p-2 bg-transparent"
                     >
-                      <Plus className="p-2 text-black transition-all duration-200 border rounded-full shadow-xl opacity-0 h-9 w-9 group-hover:opacity-100" />
+                      <Plus className="p-2 text-black transition-all duration-200 border rounded-full shadow-xl opacity-100 md:opacity-0 h-9 w-9 group-hover:opacity-100" />
                     </Button>
                   </div>
                 </div>

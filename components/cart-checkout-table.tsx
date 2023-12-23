@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Plus, Minus } from "lucide-react";
+import Image from 'next/image'
 
 // importing context
 import { UsingCartContext } from "@/context/cartContext";
@@ -33,9 +34,11 @@ function CartCheckoutTable() {
             {cart.map((product) => {
               return (
                 <TableRow key={product.id}>
-                  <TableCell className="font-medium">
+                  <TableCell className="font-medium h-full">
                     <div className="flex items-center gap-5">
-                      <img
+                      <Image
+                      width={50}
+                      height={50}
                         className="h-[125px] w-[125px] object-contain"
                         src={product.image}
                         alt=""

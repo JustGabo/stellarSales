@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import Image from 'next/image'
 
 interface Props {
   id: number;
@@ -25,7 +26,9 @@ function ProductView({ id }: Props) {
         <section className="flex flex-col gap-8 ">
           <article className="flex md:flex-row flex-col items-center gap-5">
             <div className="md:w-[40%] w-full flex items-center justify-center border rounded-lg px-4 py-8 shadow-md">
-              <img
+              <Image
+              width={200}
+              height={200}
                 className="h-[300px] object-contain"
                 src={product.image}
                 alt=""

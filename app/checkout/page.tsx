@@ -14,7 +14,7 @@ function Page() {
             <div className="md:w-[35%] w-full bg-gray-50 border h-full mb-auto flex items-start justify-center">
               <CheckoutForm />
             </div>
-            <div className="flex flex-col h-[45%]  gap-3 w-full md:w-[65%]">
+            <div className="flex flex-col h-[45%] md:h-full  gap-3 w-full md:w-[65%]">
               <Table />
             </div>
           </main>

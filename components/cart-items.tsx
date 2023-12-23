@@ -1,9 +1,10 @@
 'use client'
 import {Product} from '@/types/index'
+import {X, Plus, Minus} from 'lucide-react'
+import Image from 'next/image'
 // importing context
 import {UsingCartContext} from '@/context/cartContext'
-import {X, Plus, Minus} from 'lucide-react'
-import {Button} from '@/components/ui/button'
+
 
 function CartItems() {
 
@@ -16,7 +17,7 @@ function CartItems() {
         return (
             <div key={product.id} className='flex items-center gap-5 px-2 border-y'>
                 <div className='w-[20%] py-3'>
-                    <img className='h-[100px] w-full object-contain' src={product.image} alt="" />
+                    <Image width={50} height={50} className='h-[100px] w-full object-contain' src={product.image} alt="" />
                 </div>
                 <div className='w-[80%] flex flex-col gap-5'>
                     <div className='flex items-center justify-between'>

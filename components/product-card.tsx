@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ToastAction } from "@/components/ui/toast";
 // import {} from 'lucide-react'
 import { ArrowRightFromLine } from 'lucide-react';
+import Image from 'next/image'
 
 
 interface ProductsProps {
@@ -44,7 +45,9 @@ function ProductCard({ productsProps }: ProductsProps) {
                       <div className="w-[100%] border overflow-hidden rounded-md px-5 py-5 group  flex flex-col  gap-5 items-center justify-center">
                         {" "}
                         <Link href={`/product/${product.id}`}>
-                          <img
+                          <Image
+                          width={10}
+                          height={10}
                             className="h-[200px] group-hover:scale-110 transition-all duration-150 object-contain"
                             src={product.image}
                             alt={product.description}
@@ -103,7 +106,9 @@ function ProductCard({ productsProps }: ProductsProps) {
                       <div className="w-[100%] border overflow-hidden rounded-md px-5 py-5 group  flex flex-col  gap-5 items-center justify-center">
                         {" "}
                         <Link href={`/product/${product.id}`}>
-                          <img
+                          <Image
+                          width={140}
+                          height={140}
                             className="h-[200px] group-hover:scale-110 transition-all duration-150 object-contain"
                             src={product.image}
                             alt={product.description}
