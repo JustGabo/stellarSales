@@ -78,7 +78,7 @@ function NavBar() {
               </SheetFooter>
             </SheetContent>
           </Sheet>
-          <User2Icon className="cursor-pointer w-7 aspect-square" />
+          {/* <User2Icon className="cursor-pointer w-7 aspect-square" /> */}
         </div>
       </nav>
     </div>
